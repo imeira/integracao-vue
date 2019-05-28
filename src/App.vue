@@ -1,19 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Contador :valorInicial="10" />
+    <ContadorClasse :valorInicial="100" />
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import Contador from '@/componentes/Contador.vue'
+import ContadorClasse from '@/componentes/ContadorClasse.vue'
 
-export default {
-  name: 'app',
+@Component({
   components: {
-    HelloWorld
-  }
-}
+    Contador, ContadorClasse
+  },
+})
+export default class App extends Vue {}
 </script>
 
 <style>
